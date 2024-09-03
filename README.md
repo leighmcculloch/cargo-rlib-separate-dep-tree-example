@@ -1,5 +1,8 @@
 # cargo-rlib-separate-dep-tree-example
 
+This example supports the blog post at:
+https://leighmcculloch.com/posts/rust-building-deps-with-isolated-dep-graphs/
+
 This repo contains an example of how to use Rust's rlib crate-type to build a dependency with its own fixed dependency graph independent of the dependency graph of other crates so that version resolution occurrs in isolation for each.
 
 In the example the `bridge` program imports `rlib1` and `rlib2` that are crates with the same name `rlib`.
