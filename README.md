@@ -9,19 +9,19 @@ In the example the `bridge` program imports `rlib1` and `rlib2` that are crates 
 `rlib2` depends on `stellar-xdr 21.0.1` and has an observable difference in behavior.
 
 ```
- ┌──────────────────┐  ┌──────────────────┐
- │stellar-xdr 21.0.0│  │stellar-xdr 21.0.1│
- └──────────────────┘  └──────────────────┘
-           ▲                    ▲
-           │                    │
-        ┌──┴──┐              ┌──┴──┐
-        │rlib1│              │rlib2│
-        └─────┘              └─────┘
-           ▲                    ▲
-           │                    │
-           │      ┌──────┐      │
-           └──────┤bridge├──────┘
-                  └──────┘
+ ┌──────────────────┐  ┌──────────────────┐ 
+ │stellar-xdr 21.0.0│  │stellar-xdr 21.0.1│ 
+ └──────────────────┘  └──────────────────┘ 
+           ▲                    ▲           
+           │                    │           
+        ┌──┴──┐              ┌──┴──┐        
+        │rlib1│              │rlib2│        
+        └─────┘              └─────┘        
+           ▲                    ▲           
+           │                    │           
+           │      ┌──────┐      │           
+           └──────┤bridge├──────┘           
+                  └──────┘                  
 ```
 
 Normally Cargo would merge the `stellar-xdr` dependencies and import only one of them to service the requirements of the two `rlib` crates.
