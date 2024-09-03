@@ -32,7 +32,7 @@ When `bridge` is built it uses the predetermined and prebuilt rlibs for both the
 
 ## How
 
-1. Set the `crate-type` of the dependency to `rlib` (e.g. [rlib1/Cargo.toml](./rlib1/Cargo.toml#7), [rlib2/Cargo.toml](./rlib2/Cargo.toml#7))
+1. Set the `crate-type` of the dependency to `rlib` (e.g. [rlib1/Cargo.toml](./rlib1/Cargo.toml#7), [rlib2/Cargo.toml](./rlib2/Cargo.toml#L7))
 2. Build the rlibs (e.g. [Makefile](./Makefile#L2-L3))
 3. Provide the rlibs both direct and deps to rustc (e.g. [Makefile](./Makefile#L4-L8))
 4. Don't import the rlibs (e.g. [bridge/Cargo.toml](./bridge/Cargo.toml))
