@@ -1,0 +1,6 @@
+[build]
+rustflags = """
+--extern rlib1=../rlib1/target/release/librlib.rlib
+--extern rlib2=../rlib2/target/release/librlib.rlib
+-L dependency=../rlib1/target/release/deps
+-L dependency=../rlib2/target/release/deps"""

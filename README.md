@@ -37,7 +37,7 @@ When `bridge` is built it uses the predetermined and prebuilt rlibs for both the
 
 1. Set the `crate-type` of the dependency to `rlib` (e.g. [rlib1/Cargo.toml](./rlib1/Cargo.toml#L7), [rlib2/Cargo.toml](./rlib2/Cargo.toml#L7))
 2. Build the rlibs (e.g. [Makefile](./Makefile#L2-L3))
-3. Provide the rlibs both direct and deps to rustc (e.g. [Makefile](./Makefile#L4-L8))
+3. Provide the rlibs both direct and deps to rustc (e.g. [bridge/.cargo/config.toml](./bridge/.cargo/config.toml))
 4. Don't import the rlibs (e.g. [bridge/Cargo.toml](./bridge/Cargo.toml))
 5. Use the extern libs (e.g. [bridge/src/main.rs](./bridge/src/main.rs#L2-L3))
 
@@ -55,11 +55,7 @@ cd rlib1 && cargo build --release
 cd rlib2 && cargo build --release
    Compiling rlib v2.0.0 (rlib2)
     Finished `release` profile [optimized] target(s) in 0.06s
-cd bridge && cargo rustc --release -- \
-                --extern rlib1=../rlib1/target/release/librlib.rlib \
-                --extern rlib2=../rlib2/target/release/librlib.rlib \
-                -L dependency=../rlib1/target/release/deps \
-                -L dependency=../rlib2/target/release/deps
+cd bridge && cargo build --release
    Compiling bridge v0.1.0 (bridge)
     Finished `release` profile [optimized] target(s) in 0.14s
 ./bridge/target/release/bridge

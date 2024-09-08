@@ -1,11 +1,7 @@
 build:
 	cd rlib1 && cargo build --release
 	cd rlib2 && cargo build --release
-	cd bridge && cargo rustc --release -- \
-		--extern rlib1=../rlib1/target/release/librlib.rlib \
-		--extern rlib2=../rlib2/target/release/librlib.rlib \
-		-L dependency=../rlib1/target/release/deps \
-		-L dependency=../rlib2/target/release/deps
+	cd bridge && cargo build --release
 
 clean:
 	rm -fr bridge/target
